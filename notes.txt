@@ -1,0 +1,8 @@
+entry point for the server -> app.js
+
+'/' -> homepage
+
+routes
+	'/register' -> route for user registeration
+	'/login/ -> route for login
+

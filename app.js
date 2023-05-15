@@ -2,8 +2,7 @@ require('dotenv').config();
 const connectDB = require('./db/connect');
 const express = require('express');
 const http = require('http');
-const auth = require('./routes/auth')
-const signup = require('./routes/signup');
+const routes = require('./routes/index');
 const port = 3000;
 
 const app = express();
@@ -11,14 +10,12 @@ app.use(express.json());
 
 const server = http.createServer(app);
 
+app.use('/', routes);
 // Routes
-
 app.get('/', (req, res) => {
-    res.send("Hello this is the homepage");
+    res.send("Hello world");
 })
 
-app.use('/auth', auth);
-app.use('/signup', signup);
 
 const start = async () => {
     try {
